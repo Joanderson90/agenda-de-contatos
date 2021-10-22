@@ -14,6 +14,5 @@ Uma aplicação desktop utilizando JavaFX para simular uma agenda de contatos.
 
 
 ## :camera: Screenshot
-![screenshot](https://github.com/PauloAlves8039/Projeto-Agenda-JavaFX/blob/master/001-tw-javafx-agenda/imagem/screenshot.png)
 
 
