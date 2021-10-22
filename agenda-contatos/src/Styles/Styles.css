@@ -1,0 +1,24 @@
+.root{
+    
+    -fx-background-image: url("../image/telefone.jpg");
+    -fx-background-size: 100% 100%;
+    
+}
+
+.menu-bar {
+    
+    -fx-background-color: white;
+    -fx-background-radius: 30px;
+    -fx-alignment: center;
+    -fx-font-size: 30;
+}
+
+.menu-bar .label {
+    
+    -fx-font-size: 15;
+}
+
+.menu-item .label{
+    
+    -fx-font-size: 12;
+}
