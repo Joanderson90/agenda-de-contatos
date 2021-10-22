@@ -13,6 +13,6 @@ Uma aplicação desktop utilizando JavaFX para simular uma agenda de contatos.
 - SceneBuilder (8.5.0)
 
 
-## :camera:
+## 
 
 <center><img src="https://github.com/Joanderson90/agenda-de-contatos/blob/main/agenda-contatos/src/image/ExampleUsage.gif"></center>
