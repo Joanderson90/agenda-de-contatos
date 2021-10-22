@@ -18,7 +18,7 @@ public class ScreenManager {
 	 * 
 	 * @param path  caminho referente à <b>tela</b>.
 	 * @param title título da tela.
-	 * @throws IOException caso o caminho esteja errado, ou a tela não exista.
+	 * @throws IOException 
 	 */
 
 	public void openNewScreen(String path, String title) throws IOException {
