@@ -1,6 +1,6 @@
 # agenda-de-contatos
 Modelo de uma agenda de contatos usando JavaFX
-<h1 align="center">:book: Projeto Agenda JavaFX</h1>
+<h1 align="center">:book::phone: Agenda de Contatos JavaFX</h1>
 
 ## :computer: Sobre o Projeto
 Uma aplicação desktop utilizando JavaFX para simular uma agenda de contatos.
