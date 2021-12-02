@@ -15,4 +15,4 @@ Uma aplicação desktop utilizando JavaFX para simular uma agenda de contatos.
 
 ## 🖥️ Utilização
 
-<center><img src="https://github.com/Joanderson90/agenda-de-contatos/blob/main/agenda-contatos/src/image/ExampleUsage.gif"></center>
+<center><img src="https://github.com/Joanderson90/agenda-de-contatos/blob/main/agenda-contatos/src/image/usage.gif"></center>
