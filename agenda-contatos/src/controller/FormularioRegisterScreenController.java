@@ -8,6 +8,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.ContactDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -58,7 +59,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 			Contact contactNew = new Contact(name, andress, phoneNumber, email);
 
-			ContactScreenController.setContactNew(contactNew);
+			ContactDAO.create(contactNew);
 
 			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
 

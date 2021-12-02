@@ -8,6 +8,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.ContactDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -62,6 +63,8 @@ public class EditContactScreenController implements Initializable {
 			contactSelected.setAndress(andress);
 			contactSelected.setPhoneNumber(phoneNumber);
 			contactSelected.setEmail(email);
+
+			ContactDAO.update(contactSelected);
 
 			this.msgAlert.showMessage("Contato Editado com Sucesso!", AlertType.INFORMATION);
 

@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import dao.ContactDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,7 +23,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import model.Contact;
-import model.ContactRecords;
 import model.MessageAlert;
 import screenManager.ScreenManager;
 
@@ -69,8 +69,6 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 	private Button btnUpdateContact;
 
 	private static Contact contactSelected = new Contact();
-
-	private static ContactRecords contactRecords = new ContactRecords();
 
 	private ScreenManager screenManager = new ScreenManager();
 
@@ -132,7 +130,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		if (contactSelected != null) {
 
-			contactRecords.getContactRecords().remove(contactSelected);
+			ContactDAO.remove(contactSelected);
 
 			this.msgAlert.showMessage("Contato excluido com Sucesso!", AlertType.INFORMATION);
 
@@ -156,7 +154,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		if (keyWord != "") {
 
-			List<Contact> contactsFound = contactRecords.searchContact(keyWord);
+			List<Contact> contactsFound = ContactDAO.findByPhoneNumber(keyWord);
 
 			if (contactsFound.size() != 0) {
 
@@ -213,15 +211,9 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 	public void loadContacts() {
 
-		obsContacts = FXCollections.observableArrayList(contactRecords.getContactRecords());
+		obsContacts = FXCollections.observableArrayList(ContactDAO.getContacts());
 
 		lvContacts.setItems(obsContacts);
-
-	}
-
-	public static void setContactNew(Contact contactNew) {
-
-		contactRecords.setContact(contactNew);
 
 	}
 

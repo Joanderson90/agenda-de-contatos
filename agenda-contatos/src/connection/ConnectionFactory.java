@@ -2,19 +2,18 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
-
 public class ConnectionFactory {
 
-	private final String DRIVER = "com.mysql.jdbc.Driver";
-	private final String URL = "jdbc:mysql://localhost/3306/cadastro";
-	private final String USER = "root";
-	private final String PASSWORD = "";
+	private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private final static String URL = "jdbc:mysql://localhost:3306/cadastro";
+	private final static String USER = "root";
+	private final static String PASSWORD = "";
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 
 		try {
 
@@ -50,7 +49,7 @@ public class ConnectionFactory {
 		return connection != null;
 	}
 
-	public static void closeConnection(Connection connection, PreparableStatement<?> stmt) {
+	public static void closeConnection(Connection connection, PreparedStatement stmt) {
 
 		closeConnection(connection);
 
@@ -58,7 +57,7 @@ public class ConnectionFactory {
 
 			try {
 
-				((Connection) stmt).close();
+				stmt.close();
 
 			} catch (SQLException e) {
 
@@ -68,12 +67,12 @@ public class ConnectionFactory {
 
 	}
 
-	private static boolean isStmtOn(PreparableStatement<?> stmt) {
+	private static boolean isStmtOn(PreparedStatement stmt) {
 
 		return stmt != null;
 	}
 
-	public static void closeConnection(Connection connection, PreparableStatement<?> stmt, ResultSet rs) {
+	public static void closeConnection(Connection connection, PreparedStatement stmt, ResultSet rs) {
 
 		closeConnection(connection, stmt);
 
