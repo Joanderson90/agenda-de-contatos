@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Contact;
@@ -64,13 +65,13 @@ public class EditContactScreenController implements Initializable {
 
 			cleanFormulario();
 
-			this.msgAlert.getMessageContatoSalvo();
+			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
 
 		}
 
 		else {
 
-			this.msgAlert.getMessageNomeEmBranco();
+			this.msgAlert.showMessage("Nome obrigatório!", AlertType.ERROR);
 		}
 
 	}
@@ -106,12 +107,12 @@ public class EditContactScreenController implements Initializable {
 		loadImages();
 
 	}
-	
-	public void loadImages(){
-		
-		 btnSalvarEditContact.setGraphic(new ImageView("/icons/CadastroSalvar_32x32.png"));
-		 btnVoltar.setGraphic(new ImageView("/icons/CadastroVoltar.png"));
-		 
+
+	public void loadImages() {
+
+		btnSalvarEditContact.setGraphic(new ImageView("/icons/CadastroSalvar_32x32.png"));
+		btnVoltar.setGraphic(new ImageView("/icons/CadastroVoltar.png"));
+
 	}
 
 	public void addButtonsListener(EventHandler<ActionEvent> listener) {

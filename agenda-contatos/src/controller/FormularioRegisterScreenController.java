@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -59,7 +60,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 			ContactScreenController.setContactNew(contactNew);
 
-			this.msgAlert.getMessageContatoSalvo();
+			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
 
 			cleanFormulario();
 
@@ -67,7 +68,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 		else {
 
-			this.msgAlert.getMessageNomeEmBranco();
+			this.msgAlert.showMessage("Nome obrigatório!", AlertType.ERROR);
 		}
 
 	}
@@ -90,15 +91,15 @@ public class FormularioRegisterScreenController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		
-		 loadImages();
+
+		loadImages();
 	}
-	
-	public void loadImages(){
-		
-		 btnSalvarContact.setGraphic(new ImageView("/icons/CadastroSalvar_32x32.png"));
-		 btnVoltar.setGraphic(new ImageView("/icons/CadastroVoltar.png"));
-		 
+
+	public void loadImages() {
+
+		btnSalvarContact.setGraphic(new ImageView("/icons/CadastroSalvar_32x32.png"));
+		btnVoltar.setGraphic(new ImageView("/icons/CadastroVoltar.png"));
+
 	}
 
 	public void addButtonsListener(EventHandler<ActionEvent> listener) {

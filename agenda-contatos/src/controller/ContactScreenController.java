@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -110,7 +111,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		else {
 
-			this.msgAlert.getMessageContatoNaoSelecionada();
+			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.ERROR);
 		}
 	}
 
@@ -133,7 +134,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 			contactRecords.getContactRecords().remove(contactSelected);
 
-			this.msgAlert.getMessageContatoExcluida();
+			this.msgAlert.showMessage("Contato excluido com Sucesso!", AlertType.INFORMATION);
 
 			cleanInfoContact();
 
@@ -142,7 +143,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		else {
 
-			this.msgAlert.getMessageContatoNaoSelecionada();
+			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.ERROR);
 		}
 
 	}
@@ -163,13 +164,13 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 			else {
 
-				this.msgAlert.getMessageContatoNaoEncontrado();
+				this.msgAlert.showMessage("Contato não encontrado!", AlertType.INFORMATION);
 			}
 		}
 
 		else {
 
-			this.msgAlert.getMessageCampoObrigatorio();
+			this.msgAlert.showMessage("Preencha com um valor primeiro!", AlertType.ERROR);
 		}
 
 	}

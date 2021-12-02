@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
@@ -51,9 +52,7 @@ public class MainScreenController implements Initializable {
 	@FXML
 	void showSobreSistema(ActionEvent event) {
 
-		MessageAlert alertMessage = new MessageAlert();
-
-		alertMessage.getMessageSobreSistema();
+		new MessageAlert().showMessage("Agenda de contatos 1.0", AlertType.INFORMATION);
 	}
 
 	@FXML
