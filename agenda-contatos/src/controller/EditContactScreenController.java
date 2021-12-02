@@ -63,7 +63,7 @@ public class EditContactScreenController implements Initializable {
 			contactSelected.setPhoneNumber(phoneNumber);
 			contactSelected.setEmail(email);
 
-			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
+			this.msgAlert.showMessage("Contato Editado com Sucesso!", AlertType.INFORMATION);
 
 			ScreenManager.closeScreen(btnVoltar);
 

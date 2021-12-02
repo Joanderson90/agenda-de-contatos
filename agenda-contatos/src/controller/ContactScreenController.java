@@ -167,8 +167,6 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 				this.msgAlert.showMessage("Contato não encontrado!", AlertType.INFORMATION);
 
-				ScreenManager.closeScreen(btnAddContact);
-
 			}
 		}
 
