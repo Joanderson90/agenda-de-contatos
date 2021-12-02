@@ -232,7 +232,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 
-		txtSearch.setText("Nome, Email ou Telefone");
+		txtSearch.setText("Telefone");
 
 		formularioRegisterController = new FormularioRegisterScreenController();
 		formularioEditContactController = new EditContactScreenController();
