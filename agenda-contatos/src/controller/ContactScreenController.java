@@ -139,6 +139,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 			cleanInfoContact();
 
 			loadContacts();
+
 		}
 
 		else {
@@ -165,6 +166,9 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 			else {
 
 				this.msgAlert.showMessage("Contato não encontrado!", AlertType.INFORMATION);
+
+				ScreenManager.closeScreen(btnAddContact);
+
 			}
 		}
 

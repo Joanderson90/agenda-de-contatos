@@ -16,9 +16,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import model.Contact;
 import model.MessageAlert;
+import screenManager.ScreenManager;
 
 /**
  *
@@ -62,7 +62,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
 
-			cleanFormulario();
+			ScreenManager.closeScreen(btnVoltar);
 
 		}
 
@@ -75,17 +75,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 	public void closeScreen() {
 
-		Stage stage = (Stage) btnVoltar.getScene().getWindow();
-
-		stage.close();
-	}
-
-	public void cleanFormulario() {
-
-		txtName.setText("");
-		txtAndress.setText("");
-		txtPhoneNumber.setText("");
-		txtEmail.setText("");
+		ScreenManager.closeScreen(btnVoltar);
 
 	}
 

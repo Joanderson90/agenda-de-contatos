@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -18,7 +19,7 @@ public class ScreenManager {
 	 * 
 	 * @param path  caminho referente à <b>tela</b>.
 	 * @param title título da tela.
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 
 	public void openNewScreen(String path, String title) throws IOException {
@@ -39,6 +40,13 @@ public class ScreenManager {
 
 		this.currentController = controller;
 
+	}
+
+	public static void closeScreen(Button buttonClose) {
+
+		Stage stage = (Stage) buttonClose.getScene().getWindow();
+
+		stage.close();
 	}
 
 	/**

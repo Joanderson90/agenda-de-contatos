@@ -12,13 +12,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import model.Contact;
 import model.MessageAlert;
+import screenManager.ScreenManager;
 
 /**
  *
@@ -63,9 +63,9 @@ public class EditContactScreenController implements Initializable {
 			contactSelected.setPhoneNumber(phoneNumber);
 			contactSelected.setEmail(email);
 
-			cleanFormulario();
-
 			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
+
+			ScreenManager.closeScreen(btnVoltar);
 
 		}
 
@@ -78,9 +78,8 @@ public class EditContactScreenController implements Initializable {
 
 	public void closeScreen() {
 
-		Stage stage = (Stage) btnVoltar.getScene().getWindow();
+		ScreenManager.closeScreen(btnVoltar);
 
-		stage.close();
 	}
 
 	public void loadInfoContactSelected() {
@@ -89,15 +88,6 @@ public class EditContactScreenController implements Initializable {
 		txtAndress.setText(contactSelected.getAndress());
 		txtEmail.setText(contactSelected.getEmail());
 		txtPhoneNumber.setText(contactSelected.getPhoneNumber());
-	}
-
-	public void cleanFormulario() {
-
-		txtName.setText("");
-		txtAndress.setText("");
-		txtPhoneNumber.setText("");
-		txtEmail.setText("");
-
 	}
 
 	@Override
