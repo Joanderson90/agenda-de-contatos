@@ -69,7 +69,7 @@ public class FormularioRegisterScreenController implements Initializable {
 
 		else {
 
-			this.msgAlert.showMessage("Nome obrigatório!", AlertType.ERROR);
+			this.msgAlert.showMessage("Nome obrigatório!", AlertType.WARNING);
 		}
 
 	}

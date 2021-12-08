@@ -109,7 +109,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		else {
 
-			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.ERROR);
+			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.WARNING);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		else {
 
-			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.ERROR);
+			this.msgAlert.showMessage("Por favor selecione um contato primeiro!", AlertType.WARNING);
 		}
 
 	}
@@ -170,7 +170,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 		else {
 
-			this.msgAlert.showMessage("Preencha com um valor primeiro!", AlertType.ERROR);
+			this.msgAlert.showMessage("Preencha com um valor primeiro!", AlertType.WARNING);
 		}
 
 	}
