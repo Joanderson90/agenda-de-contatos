@@ -32,7 +32,7 @@ public class FormularioRegisterScreenController implements Initializable {
 	private TextField txtName;
 
 	@FXML
-	private TextField txtAndress;
+	private TextField txtAddress;
 
 	@FXML
 	private TextField txtPhoneNumber;
@@ -51,13 +51,13 @@ public class FormularioRegisterScreenController implements Initializable {
 	public void salvarContact() {
 
 		String name = txtName.getText();
-		String andress = txtAndress.getText();
+		String address = txtAddress.getText();
 		String phoneNumber = txtPhoneNumber.getText();
 		String email = txtEmail.getText();
 
 		if (name != "") {
 
-			Contact contactNew = new Contact(name, andress, phoneNumber, email);
+			Contact contactNew = new Contact(name, address, phoneNumber, email);
 
 			ContactDAO.create(contactNew);
 

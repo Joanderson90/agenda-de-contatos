@@ -32,7 +32,7 @@ public class EditContactScreenController implements Initializable {
 	private TextField txtName;
 
 	@FXML
-	private TextField txtAndress;
+	private TextField txtAddress;
 
 	@FXML
 	private TextField txtPhoneNumber;
@@ -53,14 +53,14 @@ public class EditContactScreenController implements Initializable {
 	public void editarContact() {
 
 		String name = txtName.getText();
-		String andress = txtAndress.getText();
+		String address = txtAddress.getText();
 		String phoneNumber = txtPhoneNumber.getText();
 		String email = txtEmail.getText();
 
 		if (name != "") {
 
 			contactSelected.setName(name);
-			contactSelected.setAndress(andress);
+			contactSelected.setAddress(address);
 			contactSelected.setPhoneNumber(phoneNumber);
 			contactSelected.setEmail(email);
 
@@ -88,7 +88,7 @@ public class EditContactScreenController implements Initializable {
 	public void loadInfoContactSelected() {
 
 		txtName.setText(contactSelected.getName());
-		txtAndress.setText(contactSelected.getAndress());
+		txtAddress.setText(contactSelected.getAddress());
 		txtEmail.setText(contactSelected.getEmail());
 		txtPhoneNumber.setText(contactSelected.getPhoneNumber());
 	}

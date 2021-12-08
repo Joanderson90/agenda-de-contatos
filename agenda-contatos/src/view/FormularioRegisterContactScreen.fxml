@@ -28,7 +28,7 @@
                   <Insets top="6.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="txtAndress" />
+            <TextField fx:id="txtAddress" />
             <Label text="Telefone">
                <font>
                   <Font name="System Bold Italic" size="14.0" />

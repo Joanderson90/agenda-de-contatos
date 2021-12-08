@@ -20,10 +20,10 @@ public class ContactDAO {
 		try {
 
 			stmt = connection
-					.prepareStatement("INSERT INTO Contacts (name, andress, phoneNumber, email) VALUES (?,?,?,?)");
+					.prepareStatement("INSERT INTO Contacts (name, address, phoneNumber, email) VALUES (?,?,?,?)");
 
 			stmt.setString(1, newContact.getName());
-			stmt.setString(2, newContact.getAndress());
+			stmt.setString(2, newContact.getAddress());
 			stmt.setString(3, newContact.getPhoneNumber());
 			stmt.setString(4, newContact.getEmail());
 
@@ -64,7 +64,7 @@ public class ContactDAO {
 				contact.setId(rs.getInt("id"));
 				contact.setName(rs.getString("name"));
 				contact.setEmail(rs.getString("email"));
-				contact.setAndress(rs.getString("andress"));
+				contact.setAddress(rs.getString("address"));
 				contact.setPhoneNumber(rs.getString("phoneNumber"));
 
 				contactsRegistered.add(contact);
@@ -91,10 +91,10 @@ public class ContactDAO {
 		try {
 
 			stmt = connection.prepareStatement(
-					"UPDATE Contacts SET name = ?, andress = ?, phoneNumber = ?, email = ? WHERE id = ?");
+					"UPDATE Contacts SET name = ?, address = ?, phoneNumber = ?, email = ? WHERE id = ?");
 
 			stmt.setString(1, newContact.getName());
-			stmt.setString(2, newContact.getAndress());
+			stmt.setString(2, newContact.getAddress());
 			stmt.setString(3, newContact.getPhoneNumber());
 			stmt.setString(4, newContact.getEmail());
 			stmt.setInt(5, newContact.getId());
@@ -165,7 +165,7 @@ public class ContactDAO {
 				contact.setId(rs.getInt("id"));
 				contact.setName(rs.getString("name"));
 				contact.setEmail(rs.getString("email"));
-				contact.setAndress(rs.getString("andress"));
+				contact.setAddress(rs.getString("address"));
 				contact.setPhoneNumber(rs.getString("phoneNumber"));
 				contactsRegistered.add(contact);
 			}

@@ -42,7 +42,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 	private TextField txtName;
 
 	@FXML
-	private TextField txtAndress;
+	private TextField txtAddress;
 
 	@FXML
 	private TextField txtPhoneNumber;
@@ -193,7 +193,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 		if (contactSelected != null) {
 
 			txtName.setText(contactSelected.getName());
-			txtAndress.setText(contactSelected.getAndress());
+			txtAddress.setText(contactSelected.getAddress());
 			txtPhoneNumber.setText(contactSelected.getPhoneNumber());
 			txtEmail.setText(contactSelected.getEmail());
 		}
@@ -203,7 +203,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 	public void cleanInfoContact() {
 
 		txtName.setText("");
-		txtAndress.setText("");
+		txtAddress.setText("");
 		txtPhoneNumber.setText("");
 		txtEmail.setText("");
 

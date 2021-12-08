@@ -56,7 +56,7 @@
                         <Insets top="6.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="txtAndress" editable="false" />
+                  <TextField fx:id="txtAddress" editable="false" />
                   <Label text="Telefone">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />

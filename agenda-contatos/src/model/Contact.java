@@ -4,7 +4,7 @@ public class Contact {
 	
 	private int id;
 	private String name;
-	private String andress;
+	private String address;
 	private String phoneNumber;
 	private String email;
 
@@ -14,7 +14,7 @@ public class Contact {
 	public Contact(String name, String andress, String phoneNumber, String email) {
 
 		this.name = name;
-		this.andress = andress;
+		this.address = andress;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 	}
@@ -27,12 +27,12 @@ public class Contact {
 		this.name = name;
 	}
 
-	public String getAndress() {
-		return andress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAndress(String andress) {
-		this.andress = andress;
+	public void setAddress(String andress) {
+		this.address = andress;
 	}
 
 	public String getPhoneNumber() {
