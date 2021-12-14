@@ -1,7 +1,7 @@
 package model;
 
 public class Contact {
-	
+
 	private int id;
 	private String name;
 	private String address;
@@ -50,8 +50,6 @@ public class Contact {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
 	public int getId() {
 		return id;
