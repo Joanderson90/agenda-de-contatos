@@ -132,7 +132,7 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 			ContactDAO.remove(contactSelected);
 
-			this.msgAlert.showMessage("Contato excluido com Sucesso!", AlertType.INFORMATION);
+			this.msgAlert.showMessage("Contato excluído com Sucesso!", AlertType.INFORMATION);
 
 			cleanInfoContact();
 
@@ -147,16 +147,39 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 
 	}
 
+	public void cleanInfoContact() {
+
+		txtName.setText("");
+		txtAddress.setText("");
+		txtPhoneNumber.setText("");
+		txtEmail.setText("");
+
+	}
+
+	public void loadContacts() {
+
+		obsContacts = FXCollections.observableArrayList(ContactDAO.getContacts());
+
+		lvContacts.setItems(obsContacts);
+
+	}
+
 	@FXML
 	void searchContact(ActionEvent event) {
 
-		String keyWord = txtSearch.getText();
+		if (notPhoneNumberAddToSearch()) {
 
-		if (keyWord != "") {
+			this.msgAlert.showMessage("Coloque um telefone primeiro!", AlertType.WARNING);
 
-			List<Contact> contactsFound = ContactDAO.findByPhoneNumber(keyWord);
+		}
 
-			if (contactsFound.size() != 0) {
+		else {
+
+			String phoneNumber = txtSearch.getText();
+
+			List<Contact> contactsFound = ContactDAO.findByPhoneNumber(phoneNumber);
+
+			if (!contactsFound.isEmpty()) {
 
 				setContactsInView(contactsFound);
 			}
@@ -166,13 +189,16 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 				this.msgAlert.showMessage("Contato não encontrado!", AlertType.INFORMATION);
 
 			}
+
 		}
 
-		else {
+	}
 
-			this.msgAlert.showMessage("Preencha com um valor primeiro!", AlertType.WARNING);
-		}
+	private boolean notPhoneNumberAddToSearch() {
 
+		String phoneNumber = txtSearch.getText();
+
+		return phoneNumber.equals("") || phoneNumber.equals("Telefone");
 	}
 
 	private void setContactsInView(List<Contact> contacts) {
@@ -197,23 +223,6 @@ public class ContactScreenController implements Initializable, EventHandler<Acti
 			txtPhoneNumber.setText(contactSelected.getPhoneNumber());
 			txtEmail.setText(contactSelected.getEmail());
 		}
-
-	}
-
-	public void cleanInfoContact() {
-
-		txtName.setText("");
-		txtAddress.setText("");
-		txtPhoneNumber.setText("");
-		txtEmail.setText("");
-
-	}
-
-	public void loadContacts() {
-
-		obsContacts = FXCollections.observableArrayList(ContactDAO.getContacts());
-
-		lvContacts.setItems(obsContacts);
 
 	}
 
