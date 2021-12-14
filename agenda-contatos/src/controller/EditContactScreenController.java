@@ -53,11 +53,12 @@ public class EditContactScreenController implements Initializable {
 	public void editarContact() {
 
 		String name = txtName.getText();
-		String address = txtAddress.getText();
-		String phoneNumber = txtPhoneNumber.getText();
-		String email = txtEmail.getText();
 
 		if (name != "") {
+
+			String address = txtAddress.getText();
+			String phoneNumber = txtPhoneNumber.getText();
+			String email = txtEmail.getText();
 
 			contactSelected.setName(name);
 			contactSelected.setAddress(address);
@@ -68,7 +69,7 @@ public class EditContactScreenController implements Initializable {
 
 			this.msgAlert.showMessage("Contato Editado com Sucesso!", AlertType.INFORMATION);
 
-			ScreenManager.closeScreen(btnVoltar);
+			closeScreen();
 
 		}
 
