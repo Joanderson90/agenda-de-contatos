@@ -51,19 +51,18 @@ public class FormularioRegisterScreenController implements Initializable {
 	public void salvarContact() {
 
 		String name = txtName.getText();
-		String address = txtAddress.getText();
-		String phoneNumber = txtPhoneNumber.getText();
-		String email = txtEmail.getText();
 
 		if (name != "") {
 
-			Contact contactNew = new Contact(name, address, phoneNumber, email);
+			String address = txtAddress.getText();
+			String phoneNumber = txtPhoneNumber.getText();
+			String email = txtEmail.getText();
 
-			ContactDAO.create(contactNew);
+			ContactDAO.create(new Contact(name, address, phoneNumber, email));
 
 			this.msgAlert.showMessage("Contato Salvo com Sucesso!", AlertType.INFORMATION);
 
-			ScreenManager.closeScreen(btnVoltar);
+			closeScreen();
 
 		}
 
