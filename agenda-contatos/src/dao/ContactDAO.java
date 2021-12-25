@@ -20,7 +20,7 @@ public class ContactDAO {
 		try {
 
 			stmt = connection
-					.prepareStatement("INSERT INTO Contacts (name, address, phoneNumber, email) VALUES (?,?,?,?)");
+					.prepareStatement("INSERT INTO contacts (name, address, phoneNumber, email) VALUES (?,?,?,?)");
 
 			stmt.setString(1, newContact.getName());
 			stmt.setString(2, newContact.getAddress());
@@ -53,7 +53,7 @@ public class ContactDAO {
 
 		try {
 
-			stmt = connection.prepareStatement("SELECT * FROM  Contacts");
+			stmt = connection.prepareStatement("SELECT * FROM  contacts");
 
 			rs = stmt.executeQuery();
 
@@ -91,7 +91,7 @@ public class ContactDAO {
 		try {
 
 			stmt = connection.prepareStatement(
-					"UPDATE Contacts SET name = ?, address = ?, phoneNumber = ?, email = ? WHERE id = ?");
+					"UPDATE contacts SET name = ?, address = ?, phoneNumber = ?, email = ? WHERE id = ?");
 
 			stmt.setString(1, newContact.getName());
 			stmt.setString(2, newContact.getAddress());
@@ -122,7 +122,7 @@ public class ContactDAO {
 
 		try {
 
-			stmt = connection.prepareStatement("DELETE FROM Contacts  WHERE id = ?");
+			stmt = connection.prepareStatement("DELETE FROM contacts  WHERE id = ?");
 
 			stmt.setInt(1, contactTarget.getId());
 
@@ -152,7 +152,7 @@ public class ContactDAO {
 
 		try {
 
-			stmt = connection.prepareStatement("SELECT * FROM  Contacts WHERE phoneNumber LIKE ?");
+			stmt = connection.prepareStatement("SELECT * FROM  contacts WHERE phoneNumber LIKE ?");
 
 			stmt.setString(1, "%" + phoneNumber + "%");
 
